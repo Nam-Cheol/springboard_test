@@ -38,7 +38,6 @@ public class BoardController {
 			@RequestParam(name = "page", defaultValue = "1") Integer page
 			, @RequestParam(name = "size", defaultValue = "5") Integer size
 			, Model model) {
-		int boardCount = boardService.readBoardCount();
 		int limit = size;
 		int offset = (page - 1) * size;
 		
@@ -93,7 +92,6 @@ public class BoardController {
 		Board board = boardService.readBoard(id);
 		board.setTitle(request.getParameter("title"));
 		board.setContent(request.getParameter("content"));
-		System.out.println(board.toString());
 		boardService.updateBoard(board, id);
 		return "redirect:/board/view";
 	}
