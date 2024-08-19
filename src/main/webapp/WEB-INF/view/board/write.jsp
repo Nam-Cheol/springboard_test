@@ -29,4 +29,5 @@
             <a href="/board/view" class="btn btn-secondary">취소</a>
         </form>
     </div>
+    </div>
 <%@ include file="/WEB-INF/view/layout/footer.jsp" %>

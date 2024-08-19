@@ -10,18 +10,15 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
    <style>
-        /* 전체 페이지를 Flexbox 레이아웃으로 설정 */
         html, body {
             height: 100%;
             margin: 0;
             display: flex;
             flex-direction: column;
         }
-        /* 내용 영역을 Flexbox 아이템으로 설정 */
         .content-wrapper {
             flex: 1;
         }
-        /* 푸터를 항상 페이지의 하단에 고정 */
         footer {
             background-color: #f8f9fa;
             padding: 10px 0;
