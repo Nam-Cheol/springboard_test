@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.tenco.server.board.repository.interfaces.BoardRepository">
+	<!-- 반드시 세미클론을 제거해야 한다. (;) -->
+
+	<select id="findAll"
+		resultType="com.tenco.server.board.repository.model.Board">
+		select * from tb_board order by id desc
+	</select>
+	
+	<select id="findByPaging"
+		resultType="com.tenco.server.board.repository.model.Board">
+		select * from tb_board order by id desc limit #{limit} offset #{offset}
+	</select>
+
+	<select id="findById"
+		resultType="com.tenco.server.board.repository.model.Board">
+		select * from tb_board where id = #{id}
+	</select>
+	
+	<select id="boardCount"
+		resultType="int">
+		select count(*) from tb_board
+	</select>
+
+	<insert id="insert">
+		insert into tb_board(title, content, username)
+		values
+		(#{title}, #{content}, #{username})
+	</insert>
+	
+	<delete id="deleteById">
+		delete from tb_board where id = #{id}
+	</delete>
+	
+	<update id="updateById">
+		update tb_board set title = #{board.title}, content = #{board.content} where id = #{id}
+	</update>
+
+</mapper>
